@@ -1,10 +1,18 @@
 import React from 'react';
-import {SignIn} from './components/SignIn';
 import {Drawer} from './components/Drawer';
+import {Dashboard} from './components/Dashboard';
+import {useStyles} from './styles/index'
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <Drawer />
+    <>
+      <Drawer />
+      <div className={classes.main}>
+        <Dashboard />
+      </div>
+    </>
   );
 }
 
