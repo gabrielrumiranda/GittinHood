@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import {useStyles} from './UserCard.styles'
 
 
-export default function UserCard() {
+export default function UserCard(props) {
   const classes = useStyles();
 
   return (
@@ -19,15 +19,15 @@ export default function UserCard() {
           className={classes.avatar}
           component="img"
           alt="Contemplative Reptile"
-          image="https://react.semantic-ui.com/images/avatar/large/matthew.png"
+          image={props.userData.avatar_url}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+          {props.userData.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles
+          {props.userData.bio}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -20,7 +20,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import {useStyles} from './Drawer.styles'
 import UserCard from './UserCard'
 
-export default function PersistentDrawerLeft() {
+export default function DrawerBar(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -72,7 +72,7 @@ export default function PersistentDrawerLeft() {
           </IconButton>
         </div>
         <Divider />
-         <UserCard />
+         <UserCard userData={props.userData} />
         <Divider />
         <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
